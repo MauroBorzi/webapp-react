@@ -34,8 +34,9 @@ const HomePage = () => {
               <div className="card-movie">
                 <img className='cover-movie' src={image} alt={title} />
                 <div className="overlay">
-                  <h2>{title}  {release_year}</h2>
-                  <h4>{genre}  {director}</h4>
+                  <h2>{title}</h2><p>{release_year}</p>
+                  <h5>GENRE: {genre} <br />
+                    DIRECTOR: {director}</h5>
                   <p>{abstract}</p>
                 </div>
               </div>

@@ -5,11 +5,9 @@ const DefoultLayout = () => {
   return (
     <>
       <Header />
-      <div className="container">
-        <main>
-          <Outlet />
-        </main>
-      </div>
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
