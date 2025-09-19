@@ -1,0 +1,16 @@
+body {
+  background-color: #084998;
+}
+
+header {
+  color: #084998;
+  background-color: #fed437;
+}
+
+main {
+  color: #fed437;
+}
+
+.logo {
+  width: 200px;
+}
