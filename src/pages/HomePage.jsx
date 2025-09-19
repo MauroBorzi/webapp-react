@@ -1,6 +1,21 @@
-import React from 'react'
+import axios from "axios"
+import { useState, useEffect } from "react"
 
 const HomePage = () => {
+
+  // variabile di stato
+  const [movies, setMovies] = useState([])
+
+  // funzione che recupera la lista film
+  const fetchMovies = () => {
+    axios.get(`http://localhost:3000/movies`).then((res) => {
+      console.log(res.data)
+      setMovies(res.data)
+    }).catch((err) => console.log(err))
+  }
+
+  useEffect(fetchMovies, [])
+
   return (
     <div className="container">
       <div className="row">
@@ -12,16 +27,21 @@ const HomePage = () => {
         </div>
       </div>
       <div className="row gy-3">
-        <div className="col-12 col-md-6 col-lg-4 pt-4">
-          <div className="card-movie">
-            <img className='cover-movie' src="./lotr.png" alt="" />
-            <div className="overlay">
-              <h2>titolo anno</h2>
-              <h4>diretto</h4>
-              <p>descrizione</p>
+        {movies.map((book) => {
+          const { id, title, director, genre, release_year, abstract, image } = book
+          return (
+            <div className="col-12 col-md-6 col-lg-4 pt-4" key={id}>
+              <div className="card-movie">
+                <img className='cover-movie' src={image} alt={title} />
+                <div className="overlay">
+                  <h2>{title}  {release_year}</h2>
+                  <h4>{genre}  {director}</h4>
+                  <p>{abstract}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )
+        })}
       </div>
     </div>
   )
