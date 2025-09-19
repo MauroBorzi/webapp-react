@@ -5,6 +5,9 @@ body {
 header {
   color: #084998;
   background-color: #fed437;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 main {
@@ -45,4 +48,8 @@ main {
 
 .card-movie:hover .overlay {
   opacity: 0.8;
+}
+
+.pt-100 {
+  padding-top: 220px;
 }
