@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
@@ -6,7 +6,14 @@ const Header = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            <img className="logo" src="./logo.png" alt="" />
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <img className="logo" src="./logo.png" alt="" />
+              </div>
+              <div>
+                <Link className="btn btn-blu" to="/"><i class="fa-solid fa-house"></i></Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
