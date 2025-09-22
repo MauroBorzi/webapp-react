@@ -4,6 +4,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 import ReviewCard from "../components/ReviewCard"
+import StarRating from "../components/StarRating"
 
 const DetailPage = () => {
 
@@ -31,16 +32,18 @@ const DetailPage = () => {
             </div>
             <div className="card-text">
               <div>
-                <h1>{movies.title}</h1><p>{movies.release_year}</p>
+                <h1>{movies.title}</h1>
+                <p>{movies.release_year}</p>
+                <p>{movies.average_vote !== null ? <StarRating vote={movies.average_vote} /> : "The book has not received any reviews"}</p>
                 <h4>GENRE: {movies.genre} <br />
                   DIRECTOR: {movies.director}</h4>
                 <p>{movies.abstract}</p>
               </div>
               <div className="d-flex justify-content-center">
-                <button type="button" class="btn btn-yellow me-3" onClick={() => navigate(`/detail/${parseInt(id) - 1}`)} disabled={parseInt(id) === 1 ? true : false}>
+                <button type="button" className="btn btn-yellow me-3" onClick={() => navigate(`/detail/${parseInt(id) - 1}`)} disabled={parseInt(id) === 1 ? true : false}>
                   <i className="fa-solid fa-caret-left"></i>
                 </button>
-                <button type="button" class="btn btn-yellow" onClick={() => navigate(`/detail/${parseInt(id) + 1}`)}>
+                <button type="button" className="btn btn-yellow" onClick={() => navigate(`/detail/${parseInt(id) + 1}`)}>
                   <i className="fa-solid fa-caret-right"></i>
                 </button>
               </div>
@@ -52,7 +55,7 @@ const DetailPage = () => {
               return (
                 <ReviewCard key={review.id} review={review} />
               )
-            }) : <h2><em>Non ci sono ancora recensioni per questo film</em></h2>}
+            }) : <h2><em>There are no reviews for this film yet.</em></h2>}
           </div>
         </div>
       </div>
