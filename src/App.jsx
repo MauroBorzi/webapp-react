@@ -2,6 +2,7 @@ import DefoultLayout from "./layout/DefoultLayout"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import DetailPage from "./pages/DetailPage"
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route element={<DefoultLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

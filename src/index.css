@@ -104,11 +104,25 @@ a {
   margin-right: 25px;
 }
 
+.btn-yellow {
+  background-color: #fed437;
+  color: #084998;
+  padding: 20px;
+  margin-right: 25px;
+}
+
 .btn-blu:hover {
   border: 3px solid #084998;
   background-color: #fed437;
   color: #084998;
   transform: scale(1.5);
+}
+
+.btn-yellow:hover {
+  border: 3px solid #fed437;
+  background-color: #084998;
+  color: #fed437;
+  transform: scale(1.2);
 }
 
 .review-card {
