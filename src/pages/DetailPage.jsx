@@ -31,6 +31,18 @@ const DetailPage = () => {
               <p>{movies.abstract}</p>
             </div>
           </div>
+          <div className="reviews">
+            <h2 className="mt-5"><strong>REVIEWS:</strong></h2>
+            {movies.reviews ? movies.reviews.map(review => {
+              return (
+                <div className="review-card">
+                  <h3>{review.name}</h3>
+                  <p>{review.vote}</p>
+                  <p>{review.text}</p>
+                </div>
+              )
+            }) : <h2><em>Non ci sono ancora recensioni per questo film</em></h2>}
+          </div>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const HomePage = () => {
         <div className="col-12">
           <div className='text-center py-4'>
             <h1>BOOLBUSTER</h1>
-            <h5>La libreria di film più grande al mondo!</h5>
+            <h5>The largest movie library in the world!</h5>
           </div>
         </div>
       </div>

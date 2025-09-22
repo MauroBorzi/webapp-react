@@ -11,7 +11,7 @@ const Header = () => {
                 <img className="logo" src="./logo.png" alt="" />
               </div>
               <div>
-                <Link className="btn btn-blu" to="/"><i class="fa-solid fa-house"></i></Link>
+                <Link className="btn btn-blu" to="/"><i className="fa-solid fa-house"></i></Link>
               </div>
             </div>
           </div>
