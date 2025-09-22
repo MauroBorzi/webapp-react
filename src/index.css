@@ -129,7 +129,11 @@ a {
   margin-top: 50px;
   border-radius: 20px;
   border: 4px solid #fed437;
-  background-color: #084998;
-  color: #fed437;
+  background-color: #fed437;
+  color: #084998;
   padding: 20px;
+}
+
+.blue {
+  color: #084998;
 }
