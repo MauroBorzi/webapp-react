@@ -80,21 +80,24 @@ a {
   width: 60%;
   color: #fed437;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-text h1 {
   font-size: 4em;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .card-text h4 {
   font-size: 2em;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .card-text p {
   font-size: 1.5em;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .btn-blu {

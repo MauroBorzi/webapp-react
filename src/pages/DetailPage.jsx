@@ -19,7 +19,7 @@ const DetailPage = () => {
     }).catch((err) => navigate('/not-found', { replace: true }))
   }
 
-  useEffect(fetchMovie, [])
+  useEffect(fetchMovie, [id, navigate])
 
   return (
     <div className="container pt-100 pb-5">
@@ -30,10 +30,20 @@ const DetailPage = () => {
               <img className='detailImg' src={movies.image} alt="" />
             </div>
             <div className="card-text">
-              <h1>{movies.title}</h1><p>{movies.release_year}</p>
-              <h4>GENRE: {movies.genre} <br />
-                DIRECTOR: {movies.director}</h4>
-              <p>{movies.abstract}</p>
+              <div>
+                <h1>{movies.title}</h1><p>{movies.release_year}</p>
+                <h4>GENRE: {movies.genre} <br />
+                  DIRECTOR: {movies.director}</h4>
+                <p>{movies.abstract}</p>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="button" class="btn btn-yellow me-3" onClick={() => navigate(`/detail/${parseInt(id) - 1}`)} disabled={parseInt(id) === 1 ? true : false}>
+                  <i className="fa-solid fa-caret-left"></i>
+                </button>
+                <button type="button" class="btn btn-yellow" onClick={() => navigate(`/detail/${parseInt(id) + 1}`)}>
+                  <i className="fa-solid fa-caret-right"></i>
+                </button>
+              </div>
             </div>
           </div>
           <div className="reviews">
