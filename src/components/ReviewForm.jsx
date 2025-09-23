@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 
 
-const ReviewForm = ({ movieId, fetchMovie }) => {
+const ReviewForm = ({ movieId, reloadReviews }) => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -20,14 +20,14 @@ const ReviewForm = ({ movieId, fetchMovie }) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefoult()
-    axios.get(`http://localhost:3000/movies/${movieId}/reviews`, formData, { headers: { "Content-Type": "application/json" } }).then((resp) => {
+    e.preventDefault()
+    axios.post(`http://localhost:3000/movies/${movieId}/reviews`, formData, { headers: { "Content-Type": "application/json" } }).then((resp) => {
       setFormData({
         name: "",
         vote: "",
         text: "",
       })
-      fetchMovie()
+      reloadReviews()
     })
   }
 
