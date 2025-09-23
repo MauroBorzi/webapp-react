@@ -53,11 +53,11 @@ const DetailPage = () => {
             </div>
           </div>
           <div className="reviews">
-            <ReviewForm />
+            <ReviewForm movieId={id} />
             <h2 className="mt-5"><strong>REVIEWS:</strong></h2>
-            {movies.reviews ? movies.reviews.map(review => {
+            {movies.reviews && movies.reviews.length > 0 ? movies.reviews.map(review => {
               return (
-                <ReviewCard key={review.id} review={review} />
+                <ReviewCard key={review.id} review={review} reloadReviews={fetchMovie} />
               )
             }) : <h2><em>There are no reviews for this film yet.</em></h2>}
           </div>
