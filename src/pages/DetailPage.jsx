@@ -2,9 +2,11 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import ReviewCard from "../components/ReviewCard"
 import StarRating from "../components/StarRating"
+import ReviewForm from "../components/ReviewForm"
 
 const DetailPage = () => {
 
@@ -40,9 +42,10 @@ const DetailPage = () => {
                 <p>{movies.abstract}</p>
               </div>
               <div className="d-flex justify-content-center">
-                <button type="button" className="btn btn-yellow me-3" onClick={() => navigate(`/detail/${parseInt(id) - 1}`)} disabled={parseInt(id) === 1 ? true : false}>
+                <button type="button" className="btn btn-yellow" onClick={() => navigate(`/detail/${parseInt(id) - 1}`)} disabled={parseInt(id) === 1 ? true : false}>
                   <i className="fa-solid fa-caret-left"></i>
                 </button>
+                <Link className="btn btn-yellow" to="/"><i className="fa-solid fa-house"></i></Link>
                 <button type="button" className="btn btn-yellow" onClick={() => navigate(`/detail/${parseInt(id) + 1}`)}>
                   <i className="fa-solid fa-caret-right"></i>
                 </button>
@@ -50,6 +53,7 @@ const DetailPage = () => {
             </div>
           </div>
           <div className="reviews">
+            <ReviewForm />
             <h2 className="mt-5"><strong>REVIEWS:</strong></h2>
             {movies.reviews ? movies.reviews.map(review => {
               return (
