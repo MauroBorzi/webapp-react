@@ -11,6 +11,9 @@ const Header = () => {
                 <img className="logo" src="/logo.png" alt="" />
               </div>
               <div>
+                <Link className="btn btn-blu" to="/detail/create"><strong>ADD NEW FILM</strong></Link>
+              </div>
+              <div>
                 <Link className="btn btn-blu" to="/"><i className="fa-solid fa-house"></i></Link>
               </div>
             </div>
