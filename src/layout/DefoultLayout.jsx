@@ -1,13 +1,20 @@
 import Header from "../components/Header"
 import { Outlet } from "react-router-dom"
+import GlobalContext from "../contexts/globalContext"
+import { useContext } from "react"
+import Loader from "../components/Loader"
 
 const DefoultLayout = () => {
+
+  const { isLoading } = useContext(GlobalContext)
+
   return (
     <>
       <Header />
       <main>
         <Outlet />
       </main>
+      {isLoading && <Loader />}
     </>
   )
 }

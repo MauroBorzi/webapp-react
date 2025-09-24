@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
 import StarRating from "../components/StarRating"
 import ReviewForm from "../components/ReviewForm"
+import GlobalContext from "../contexts/globalContext"
 
 const DetailPage = () => {
 
@@ -15,10 +16,13 @@ const DetailPage = () => {
   const navigate = useNavigate()
 
   const [movies, setMovies] = useState({})
+  const { setIsLoading } = useContext(GlobalContext)
 
   const fetchMovie = () => {
+    setIsLoading(true)
     axios.get(`http://localhost:3000/movies/${id}`).then((res) => {
       setMovies(res.data)
+      setIsLoading(false)
     }).catch((err) => navigate('/not-found', { replace: true }))
   }
 

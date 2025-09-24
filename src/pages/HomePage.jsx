@@ -1,18 +1,20 @@
 import axios from "axios"
-import { useState, useEffect } from "react"
-
+import { useState, useEffect, useContext } from "react"
+import GlobalContext from "../contexts/globalContext"
 import MovieCard from "../components/MovieCard"
 
 const HomePage = () => {
 
   // variabile di stato
   const [movies, setMovies] = useState([])
+  const { setIsLoading } = useContext(GlobalContext)
 
   // funzione che recupera la lista film
   const fetchMovies = () => {
+    setIsLoading(true)
     axios.get(`http://localhost:3000/movies`).then((res) => {
-      console.log(res.data)
       setMovies(res.data)
+      setIsLoading(false)
     }).catch((err) => console.log(err))
   }
 
