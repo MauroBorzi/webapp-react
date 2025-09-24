@@ -23,7 +23,7 @@ const DetailPage = () => {
     axios.get(`http://localhost:3000/movies/${id}`).then((res) => {
       setMovies(res.data)
       setIsLoading(false)
-    }).catch((err) => navigate('/not-found', { replace: true }))
+    }).catch(() => { setIsLoading(false); navigate('/not-found', { replace: true }) })
   }
 
   useEffect(fetchMovie, [id, navigate])

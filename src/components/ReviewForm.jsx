@@ -37,15 +37,15 @@ const ReviewForm = ({ movieId, reloadReviews }) => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label"><strong>NAME</strong></label>
-          <input type="text" className="form-control" id="name" name="name" placeholder="Name" value={formData.name} onChange={setFieldValue} />
+          <input type="text" className="form-control" id="name" name="name" placeholder="Name" value={formData.name} onChange={setFieldValue} required />
         </div>
         <div className="mb-3">
           <label className="form-label"><strong>VOTE</strong></label>
-          <input type="number" min="0" max="5" className="form-control" id="vote" name="vote" placeholder="Vote" value={formData.vote} onChange={setFieldValue} />
+          <input type="number" min="0" max="5" className="form-control" id="vote" name="vote" placeholder="Vote" value={formData.vote} onChange={setFieldValue} required />
         </div>
         <div className="mb-3">
           <label className="form-label"><strong>REVIEW</strong></label>
-          <textarea className="form-control" id="text" name="text" placeholder='Insert review' rows="3" value={formData.text} onChange={setFieldValue}></textarea>
+          <textarea className="form-control" id="text" name="text" placeholder='Insert review' rows="3" value={formData.text} onChange={setFieldValue} required></textarea>
         </div>
         <button onClick={handleSubmit} className="btn btn-yellow">CREATE</button>
       </form>

@@ -46,37 +46,37 @@ const CreateMovie = () => {
           <div className="col-12 col-md-6 col-lg-4">
             <div className="mb-3">
               <label className="form-label"><strong>TITLE</strong></label>
-              <input type="text" className="form-control" id="title" name="title" placeholder="Title" value={formData.title} onChange={setFieldValue} />
+              <input type="text" className="form-control" id="title" name="title" placeholder="Title" value={formData.title} onChange={setFieldValue} required />
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4">
             <div className="mb-3">
               <label className="form-label"><strong>DIRECTOR</strong></label>
-              <input type="text" className="form-control" id="director" name="director" placeholder="Director" value={formData.director} onChange={setFieldValue} />
+              <input type="text" className="form-control" id="director" name="director" placeholder="Director" value={formData.director} onChange={setFieldValue} required />
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4">
             <div className="mb-3">
               <label className="form-label"><strong>GENRE</strong></label>
-              <input type="text" className="form-control" id="genre" name="genre" placeholder="Genre" value={formData.genre} onChange={setFieldValue} />
+              <input type="text" className="form-control" id="genre" name="genre" placeholder="Genre" value={formData.genre} onChange={setFieldValue} required />
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="mb-3">
               <label className="form-label"><strong>RELEASE YEAR</strong></label>
-              <input type="number" className="form-control" id="release_year" name="release_year" placeholder="Release year" value={formData.release_year} onChange={setFieldValue} />
+              <input type="number" className="form-control" id="release_year" name="release_year" placeholder="Release year" value={formData.release_year} onChange={setFieldValue} required />
             </div>
           </div>
           <div className="col-12 col-md-6">
             <div className="mb-3">
               <label className="form-label"><strong>IMAGE</strong></label>
-              <input className="form-control" type="file" id="image" name='image' placeholder='upload image' onChange={setFieldValue} />
+              <input className="form-control" type="file" id="image" name='image' placeholder='upload image' onChange={setFieldValue} required />
             </div>
           </div>
           <div className="col-12">
             <div className="mb-3">
               <label className="form-label"><strong>ABSTRACT</strong></label>
-              <textarea className="form-control" id="abstract" name="abstract" placeholder='Insert abstract' rows="3" value={formData.abstract} onChange={setFieldValue}></textarea>
+              <textarea className="form-control" id="abstract" name="abstract" placeholder='Insert abstract' rows="3" value={formData.abstract} onChange={setFieldValue} required></textarea>
             </div>
           </div>
           <div className="col-12 text-center my-3">
